@@ -7,7 +7,7 @@ int minValue = 600;
 void setup() {
   pinMode(pinRed, OUTPUT); // configure digital pin pinRed as an output
   pinMode(pinGreen, OUTPUT); // configure digital pin pinGreen as an output
-  pinMode(piezoPin, OUTPUT);
+  pinMode(piezoPin, OUTPUT); // configure digital pin as buzzer
 }
 
 void loop() {
@@ -16,7 +16,7 @@ void loop() {
   if (sensor < minValue) { // If it is low water...
     digitalWrite(pinRed, LOW); //turn green LED off
     digitalWrite(pinGreen, HIGH); // turn red LED on
-    tone(piezoPin, 1000, 500);
+    tone(piezoPin, 1000, 500); // play buzzer
   }
 
   else { // If it's dark...
